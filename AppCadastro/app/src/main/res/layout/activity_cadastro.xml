@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="sud.barros.com.appcadastro.CadastroActivity">
+
+    <ImageView
+        android:id="@+id/fotosalvar"
+        android:layout_width="229dp"
+        android:layout_height="179dp"
+        android:layout_gravity="center_horizontal"
+        app:srcCompat="@mipmap/ic_launcher_round"
+        tools:ignore="ContentDescription" />
+
+    <EditText
+        android:id="@+id/eddescricao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Nome do Livro"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/edplaca"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Seu nome"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/edano"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Seu wpp"
+        android:inputType="phone" />
+
+    <Button
+        android:id="@+id/btsalvarcadastro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Salvar" />
+</LinearLayout>

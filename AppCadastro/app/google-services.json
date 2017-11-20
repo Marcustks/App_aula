@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "522442593667",
+    "firebase_url": "https://appcadastro-4c54a.firebaseio.com",
+    "project_id": "appcadastro-4c54a",
+    "storage_bucket": "appcadastro-4c54a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:522442593667:android:485e1a0f01e9e07c",
+        "android_client_info": {
+          "package_name": "sud.barros.com.appcadastro"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "522442593667-t2bi6ia5kd6q1c6h7id4u3m52s053162.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "sud.barros.com.appcadastro",
+            "certificate_hash": "ca5566b89774f95b1eb63f64a8f7242177bab3db"
+          }
+        },
+        {
+          "client_id": "522442593667-u9repml3lvsdunat112sss1ebbc6pjot.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATGMumb-dUsycpVmOuQsudtnNvWFmnZVA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "522442593667-u9repml3lvsdunat112sss1ebbc6pjot.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
