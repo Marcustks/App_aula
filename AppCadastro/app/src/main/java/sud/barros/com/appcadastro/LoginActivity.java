@@ -20,6 +20,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     private EditText etEmail;
     private EditText etSenha;
+    private Button btoff;
     private Button btLogar;
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
@@ -32,8 +33,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         etEmail = (EditText)findViewById(R.id.etEmail);
         etSenha = (EditText)findViewById(R.id.etSenha);
         btLogar = (Button)findViewById(R.id.btLogar);
+        btoff   = (Button)findViewById(R.id.btoff);
         mAuth = FirebaseAuth.getInstance();
         btLogar.setOnClickListener(this);
+        btoff.setOnClickListener(this);
 
         //etEmail.
         String email = Prefs.obter(getApplicationContext(),"email");
@@ -44,10 +47,19 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     }
 
+
+
     @Override
     public void onClick(View v) {
         switch (v.getId())
         {
+
+            case R.id.btoff:
+                Toast.makeText(getApplicationContext(),"Logado com sucesso!",Toast.LENGTH_LONG).show();
+                Intent telahome = new Intent(getApplicationContext(),HomeActivity.class);
+                startActivity(telahome);
+                finish();
+                break;
             case R.id.btLogar:
 
                 String email = etEmail.getText().toString().trim();

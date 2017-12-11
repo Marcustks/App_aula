@@ -111,7 +111,9 @@ public class CadastroActivity extends AppCompatActivity implements View.OnClickL
                 String placa=edplaca.getText().toString().trim();
                 String ano=edano.getText().toString().trim();
 
-                Veiculo veiculo = new Veiculo(descricao,placa,ano);
+                //Veiculo veiculo = new Veiculo(descricao,placa,ano);
+
+                Veiculo veiculo=new  Veiculo(descricao, placa, placa, descricao,ano," ");
                 veiculo.setUrl("");
 
 

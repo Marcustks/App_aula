@@ -27,7 +27,8 @@ public class ListarActivity extends AppCompatActivity {
     DatabaseReference myRef;
 
     private ListView lvlistar;
-    private List<Veiculo> veiculos;
+    private List<Veiculo> veiculosFirebase;
+    private List<Veiculo> veiculosSqlite;
     private VeiculosAdapter adapter;
 
     public void preencher()
@@ -37,8 +38,11 @@ public class ListarActivity extends AppCompatActivity {
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
 
                 Veiculo p = dataSnapshot.getValue(Veiculo.class);
-                veiculos.add(p);
-                adapter.updateListaVeiculos(veiculos);
+                p.setCodigoKey(dataSnapshot.getKey());
+                HomeActivity.controleVeiculo.adicionar(p);
+
+                veiculosFirebase.add(p);
+                adapter.updateListaVeiculos(veiculosFirebase);
                 adapter.notifyDataSetChanged();
             }
 
@@ -72,9 +76,9 @@ public class ListarActivity extends AppCompatActivity {
 
         database =  FirebaseDatabase.getInstance();
         myRef = database.getReference("veiculos");
-        veiculos = new ArrayList<>();
+        veiculosFirebase = new ArrayList<>();
 
-        adapter = new VeiculosAdapter(this, veiculos);
+        adapter = new VeiculosAdapter(this, veiculosFirebase);
         lvlistar = (ListView) findViewById(R.id.lvlistar);
         lvlistar.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -88,6 +92,16 @@ public class ListarActivity extends AppCompatActivity {
 
         preencher();
 
+        if(veiculosFirebase.size()==0)
+        {
+
+            veiculosSqlite = HomeActivity.controleVeiculo.listar();
+
+            Toast.makeText(getApplicationContext(),"DB ="+veiculosSqlite.size(),Toast.LENGTH_SHORT).show();
+
+            adapter.updateListaVeiculos(veiculosSqlite);
+            adapter.notifyDataSetChanged();
+        }
     }
 
 

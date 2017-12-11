@@ -7,10 +7,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import controle.ControleVeiculo;
+
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button btcadastrarveiculo;
     private Button btlistar;
+    public static ControleVeiculo controleVeiculo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +25,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
         btcadastrarveiculo.setOnClickListener(this);
         btlistar.setOnClickListener(this);
+
+        controleVeiculo = new ControleVeiculo(getApplicationContext());
 
     }
 

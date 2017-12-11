@@ -81,10 +81,12 @@ public class VeiculosAdapter extends BaseAdapter {
         descricao.setText(currentItem.getDesricao());
         placa.setText(currentItem.getPlaca());
         ano.setText(currentItem.getAno());
+
         Picasso.with(context)
                 .load(currentItem.getUrl())
                 .resize(176, 144)
                 .centerCrop()
+                .placeholder(R.drawable.common_full_open_on_phone)
                 .into(fotoVeiculo);
 
         // returns the view for the current row
